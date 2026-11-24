@@ -133,6 +133,18 @@ Example: `spike.mat` from ShimonoMLab/NetworkEstimate_WithEICateg
   The fast counting implementation (`te_spike_delays`) reproduces a direct
   dense-array computation exactly on synthetic data with a known 5-ms delay.
 
+**TE and directed information.** With full histories, TE from X to Y at
+step t is I(X^{t-1}; Y_t | Y^{t-1}); summed over t it equals the directed
+information from the one-step-delayed X to Y, I(0X^{n-1} -> Y^n) (Massey 1990;
+Amblard & Michel 2011, J Comput Neurosci 30:7–16). The capacity of a channel with
+feedback is the limit of the normalized (undelayed) directed information
+maximized over causally conditioned input distributions (Kim 2008, IEEE
+Trans Inf Theory 54:1488–1499); what is estimated here is a dependence
+between observed series, not a capacity. The estimators here are not truncations of that sum: they use a target
+history of one bin, take the source at one delay d at a time, and keep the
+largest value over d = 1–30 ms. They stand in for directed information as
+a pairwise, delay-resolved statistic.
+
 ## 3. Robustness of the TE significance test / 有意判定の頑健性
 
 `robustness_te.py` (results in `results_robustness.json`) changes one
@@ -372,10 +384,22 @@ itself slightly above nominal (1.5% at p < 0.01, 5.8% at p < 0.05, 1,600 null
 pairs; mask-aware 1.25-1.8% and 6.1-6.9%), and the test was not
 re-calibrated on null pairs of this recording.
 
+**Common missingness is not neural common input.** The null pairs join
+neurons recorded at different times, so they share no neural input; the
+false positives above the no-loss level among them are therefore attributed
+to the shared loss pattern (common missingness), which acts like a common
+driver but is not one. That artifact can be removed because the
+loss times are known from sequence numbers. Neural common input (an unobserved
+third neuron or a shared drive) is a property of the system: the loss mask
+does nothing about it, and it is handled, as before, by conditioning and by
+checks on models with known wiring. The two can coexist in real recordings;
+the experiments here isolate the first.
+
 What this shows, with its limits:
 - Reading bursty gaps as silence makes channels that cannot be coupled look
   dependent: the false-positive rate is about twice the nominal level at 30
-  min and grows at 60 min (one replicate). A distortion that grows with the
+  min and grows at 60 min (here one replicate; section 7 confirms it in three
+  replicates). A distortion that grows with the
   recording is not a sampling error; it does not go away by recording longer.
 - Telling the estimator where packets were lost (sequence numbers, also over
   UDP) brings the false-positive rate back near the nominal level, for
@@ -402,7 +426,7 @@ What this shows, with its limits:
   rate 10%. Planted couplings are spike copies, not synaptic transmission.
 
 欠落を発火なしと読むと、連続した欠落では結合しえない組の偽陽性が名目の約2倍になり、
-60分ではさらに増えました（1組）。欠落位置を推定に渡すと名目の水準に戻り、写し込んだ結合の
+60分ではさらに増えました（第7節で3組を確認）。欠落位置を推定に渡すと名目の水準に戻り、写し込んだ結合の
 検出率はほぼ保たれました。発火の多い2本目の記録では、独立な欠落でも発火なしと読むと結合しえない組の約半数が有意になり、
 欠落位置を使うと名目の水準に戻りました。全チャネルが自然に黙るパケットが珍しい記録ほど、歪みは大きくなります。
 
@@ -455,22 +479,38 @@ mask-aware estimate under 10% loss is placed on that curve:
 The prediction holds to within about 1.5 min, well inside the spread between
 replicates.
 
-**Formulation.** Packets of length tau carry all channels; the link loses
-packets with rate p (independently or in bursts) and has one-way delay
-delta; a process can wait D after a packet was sent. A scheme s (UDP with the
-loss mask; XOR parity over k packets; NACK retransmission) leaves a residual
-loss R_s(D) and uses b_s times the data bandwidth. The mask-aware estimate
-stays calibrated whatever R_s(D) is (section 6), and behaves like a complete
-recording of length f(R_s(D)) T (above), where f is the fraction of steps whose
-bins t+1, t and t+1-d are all delivered. The recording time to reach a target
-detection rate is therefore
+**An approximation model for the transport choice.** Packets of length tau
+carry all channels; the link loses packets with rate p (independently or in
+bursts) and has one-way delay delta; a process can wait D after a packet was
+sent. A scheme s (UDP with the loss mask; XOR parity over k packets; NACK
+retransmission) leaves a residual loss R_s(D) and uses b_s times the data
+bandwidth. Let f(R) be the fraction of steps whose bins t+1, t and t+1-d are
+all delivered. Assumptions:
 
-    T*(s, D) = T*_0 / f(R_s(D)),     choose  s* = argmin_s T*(s, D)  subject to  b_s rho <= C,
+- A1 (ignorable loss): whether a packet is lost does not depend on the values
+  it carries, given the rest. Then the mask-aware estimate stays calibrated
+  (section 6).
+- A2 (power is set by usable steps): the detection rate of the mask-aware
+  estimate depends on the data only through the number of usable steps, so a
+  recording of length T with residual loss R is worth a complete recording of
+  length f(R) T.
+- A3 (stationarity): the detection-vs-length curve of the complete recording
+  does not change over the recording.
+
+Under A1–A3 the recording time to reach a target detection rate is
+
+    T*(s, D) ≈ T*_0 / f(R_s(D)),     choose  s* = argmin_s T*(s, D)  subject to  b_s rho <= C,
 
 with T*_0 the time for a complete recording, rho the data rate and C the
-capacity. Reading gaps as silence is excluded: its error is a bias that does
-not shrink with T. `transport_choice.py` (`results_transport_choice.json`)
-evaluates f and b_s by simulating the link (tau = 10 ms, delta = 20 ms,
+capacity. The model makes a prediction that can fail: the mask-aware
+estimate under loss should sit on the complete-recording curve at f T. It was
+tested above (24.0 min measured against 24.6 min predicted for independent
+loss; 27.9 against 26.5 for bursts; five replicates of one recording). It
+should fail when A1 fails (loss that depends on the carried values), when the
+recording is too short for the curve to be smooth, or when the network changes
+within the recording (A3). Reading gaps as silence is outside the model: its
+error is a bias that does not shrink with T. `transport_choice.py`
+(`results_transport_choice.json`) evaluates f and b_s by simulating the link (tau = 10 ms, delta = 20 ms,
 p = 10%, bursts of mean 10 packets, k = 4):
 
 | deadline D | independent loss: mask / parity / retransmission | bursts: mask / parity / retransmission |
@@ -493,10 +533,23 @@ link in the teaching material (NeuralDataStreamingLab, E6).
 
 Sequence-number loss notification, NACK feedback and FEC are already
 standardized for real-time streams in RTP/RTCP (RFC 3550, RFC 4585, RFC 8627);
-the formulation does not replace them but chooses among them by the
-reliability of the estimated network.
+the model does not replace them but chooses among them by the reliability of
+the estimated network. What is implemented and what is not:
 
-Limits: one link model and one loss rate, fixed in advance (the extra load
+| item | status |
+| --- | --- |
+| calibrated test (pooled null), mask-aware TE, T* computation | implemented here (`tmcore.py`, `te_masked_spikes.py`, `transport_choice.py`) |
+| link with independent / bursty loss for the T* table | simulated (`transport_choice.py`), not measured |
+| own sequence numbers, NACK retransmission, XOR parity over UDP | implemented in the teaching material (NeuralDataStreamingLab E6), on 127.0.0.1 with emulated loss |
+| RTP/RTCP (RFC 3550), RTCP NACK (RFC 4585), FlexFEC (RFC 8627) | not implemented; cited as the standards the model would sit on |
+| two-host testbed with netem | planned |
+
+Limits of the transport simulation: one-way delay is constant (no jitter,
+no reordering); the Gilbert–Elliott parameters are fixed (p = 10%, mean burst
+10 packets); NACKs and retransmissions are lost independently with rate p even
+during a burst; retransmissions do not add load to the link; header overhead
+and RTP/RTCP timing rules are not modelled; parity uses one group size (k = 4).
+Limits of the model: one link model and one loss rate, fixed in advance (the extra load
 that retransmissions add, which can itself raise the loss rate, is not yet
 modelled); T*_0 and the equivalence were
 measured on one recording (five replicates); the formulation assumes the
@@ -504,9 +557,9 @@ loss does not depend on the values a packet carries (section 6).
 
 検定は一部の区間で選び、使わなかった区間と別の記録で評価しました（1%に対し1.5%）。発火なしと読むと
 偽陽性は記録を延ばしても減らず、60分では3組とも増えました（歪み）。欠落位置を使うと名目付近のまま、
-検出率は記録とともに上がり、使える時点の割合 f だけ短い完全な記録と同じ検出率になりました
-（予測24.6分に対し実測24.0分）。これにより方式の選択を T*(s, D) = T*_0 / f(R_s(D)) の最小化として
-定式化しました。
+検出率は記録とともに上がり、使える時点の割合 f だけ短い完全な記録と矛盾しない検出率でした
+（予測24.6分に対し実測24.0分）。これにより、仮定A1–A3（欠落が値と無関係、検出力は使える時点の数で決まる、定常性）のもとで
+T*(s, D) ≈ T*_0 / f(R_s(D)) とする近似モデルで方式を選びます。RTP/RTCPは実装していません。
 
 ## Across the two systems / 二つの系を通して
 
