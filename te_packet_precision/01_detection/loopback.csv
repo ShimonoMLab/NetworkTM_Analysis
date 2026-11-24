@@ -1,0 +1,13 @@
+loss,mode,deadline_ms,valid_packets,total_ip_udp_app_bytes,max_bytes_per_block,rate,payload_match
+iid,none,50,736,188800,944,1.0,PASS
+iid,none,100,736,188800,944,1.0,PASS
+iid,xor,50,769,236000,1180,1.25,PASS
+iid,xor,100,779,236000,1180,1.25,PASS
+iid,nack,50,736,213580,1416,1.13125,PASS
+iid,nack,100,777,213580,1416,1.13125,PASS
+burst,none,50,724,188800,944,1.0,PASS
+burst,none,100,724,188800,944,1.0,PASS
+burst,xor,50,729,236000,1180,1.25,PASS
+burst,xor,100,737,236000,1180,1.25,PASS
+burst,nack,50,724,204376,1416,1.0825,PASS
+burst,nack,100,746,204376,1416,1.0825,PASS

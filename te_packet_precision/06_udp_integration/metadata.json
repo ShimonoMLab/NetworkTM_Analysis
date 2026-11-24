@@ -1,0 +1,44 @@
+[
+  {
+    "file": "spikes.npy",
+    "sha256": "5883c8faaf0ba8cc796c2897d4d7bef3bdd17631600973fe7c56f5667f6f22ee",
+    "shape": [
+      40000,
+      128
+    ],
+    "pilot_samples": 20000,
+    "test_samples": 20000,
+    "channels": [
+      19,
+      21,
+      35,
+      40,
+      56,
+      62,
+      63,
+      76
+    ],
+    "provenance": "User binary spike/event array; recording origin and time step unverified"
+  },
+  {
+    "file": "spikes2.npy",
+    "sha256": "d9364a8ffe9302942dbb720c15b5ffed8277fe9505f649edcac0c2a2a391fe55",
+    "shape": [
+      40000,
+      128
+    ],
+    "pilot_samples": 20000,
+    "test_samples": 20000,
+    "channels": [
+      54,
+      97,
+      126,
+      99,
+      98,
+      53,
+      101,
+      95
+    ],
+    "provenance": "User binary spike/event array; recording origin and time step unverified"
+  }
+]
