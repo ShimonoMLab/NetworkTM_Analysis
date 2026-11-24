@@ -21,7 +21,7 @@ and without telling the estimator where packets were lost.
 | `robustness_te.py` | robustness of the TE test on GEANT and on synthetic series with known couplings (section 3) |
 | `conditioning_check.py` | whether conditioning on the network mean removes true couplings (section 3) |
 | `te_masked_spikes.py` | binary TE for spike trains using only received bins (loss mask from sequence numbers) |
-| `null_check.py` | calibration of the spike-train TE test on pairs that cannot be coupled (section 5) |
+| `null_check.py` | calibration of the spike-train TE test on time-shifted pairs with no possible causal dependence (section 5) |
 | `loss_groundtruth.py` | packet loss judged on null and planted pairs: false positives and detection (section 6) |
 | `loss_length.py` | loss vs recording length (growth) and the equivalent-length test of mask-aware estimation (section 7) |
 | `transport_choice.py` | T*(s, D) = T*_0 / f(R_s(D)) for mask / parity / retransmission by deadline (section 7) |
@@ -284,8 +284,10 @@ in the simulator and testbed.
 `null_check.py` (results in `results_null_check.jsonl`, both the z-test and the pooled-null values; arrays in `null_01.npz`).
 The 40 neurons of one 30-min segment and the same 40 neurons of another
 30-min segment are placed side by side on a common clock (80 trains). The
-3,200 pairs that cross the two segments **cannot be coupled**, so every
-significant crossing pair is a false positive of the whole procedure.
+3,200 pairs that cross the two segments are recorded at different times, so
+no causal dependence between them is possible (this is a time-shifted
+control, not a test of structural non-connection); every significant
+crossing pair is a false positive of the whole procedure.
 
 | p-value from | crossing pairs p < 0.05 | p < 0.01 | p < 0.001 | FDR-significant (q = 0.05) |
 | --- | --- | --- | --- | --- |
@@ -318,7 +320,8 @@ neuron subset, not the published analyses.
 `loss_groundtruth.py` (results in `results_loss_groundtruth.jsonl`). Real
 spike trains keep their own statistics, and the truth is set by construction:
 **null pairs** join a neuron of one segment and a neuron of another segment
-(cannot be coupled); **planted pairs** are targets made of a real neuron of
+(recorded at different times, so no causal dependence is possible; a
+time-shifted control, not structural non-connection); **planted pairs** are targets made of a real neuron of
 the second segment plus copies of a source neuron's spikes at a fixed delay
 (2–25 ms, jitter 0–2 ms, each spike copied with probability 0.02). All 100
 channels travel in the same 10-ms packets, so a lost packet silences every
@@ -396,7 +399,7 @@ checks on models with known wiring. The two can coexist in real recordings;
 the experiments here isolate the first.
 
 What this shows, with its limits:
-- Reading bursty gaps as silence makes channels that cannot be coupled look
+- Reading bursty gaps as silence makes time-shifted channels with no causal dependence look
   dependent: the false-positive rate is about twice the nominal level at 30
   min and grows at 60 min (here one replicate; section 7 confirms it in three
   replicates). A distortion that grows with the
@@ -438,10 +441,12 @@ record; their significance counts use the z-test of versions up to 3.4.
 
 **Calibration chosen on one part, evaluated on others.** The pooled null
 (section 5) was chosen on segments 0/1 of the first recording. On null pairs
-that took no part in that choice the rate of p < 0.01 is 1.5% for segments
-2/3 of the first recording (400 pairs; binomial P = 0.21 against 1%) and
-1.5% for the second recording (1,600 pairs; P = 0.04), i.e. close to
-nominal in the first recording and slightly liberal in the second.
+that took no part in that choice, the fraction with p < 0.01 is 1.5% for
+segments 2/3 of the first recording (6 of 400 pairs) and 1.5% for the second
+recording (24 of 1,600 pairs), against a nominal 1%. The pairs share neurons
+and are not independent, so we report these fractions without a test; read
+them as close to nominal in the first recording and somewhat above nominal in
+the second.
 
 **Separating loss from recording length** (`loss_length.py growth`,
 `results_length_growth.jsonl`). Nested windows of 15, 30 and 60 min from the
@@ -555,7 +560,7 @@ modelled); T*_0 and the equivalence were
 measured on one recording (five replicates); the formulation assumes the
 loss does not depend on the values a packet carries (section 6).
 
-検定は一部の区間で選び、使わなかった区間と別の記録で評価しました（1%に対し1.5%）。発火なしと読むと
+検定は一部の区間で選び、使わなかった区間と別の記録で評価しました（名目1%に対し、ともに約1.5%。組は細胞を共有し独立ではないため、検定はしていません）。発火なしと読むと
 偽陽性は記録を延ばしても減らず、60分では3組とも増えました（歪み）。欠落位置を使うと名目付近のまま、
 検出率は記録とともに上がり、使える時点の割合 f だけ短い完全な記録と矛盾しない検出率でした
 （予測24.6分に対し実測24.0分）。これにより、仮定A1–A3（欠落が値と無関係、検出力は使える時点の数で決まる、定常性）のもとで
@@ -594,7 +599,7 @@ observations are missing, and should be checked rather than assumed.
   formulation of the transport choice (`loss_length.py`,
   `transport_choice.py`).
 - 2026-11-24 (3.5): calibration of the spike-train TE test on pairs that
-  cannot be coupled (`null_check.py`): the per-pair z-test used up to 3.4
+  time-shifted pairs (`null_check.py`): the per-pair z-test used up to 3.4
   was anti-conservative (49 of 3,200 null pairs FDR-significant); replaced by
   a pooled null (`tmcore.pooled_null_p`), which is calibrated. Spike-train
   significance counts of 3.4 withdrawn. Packet-loss experiment redone
