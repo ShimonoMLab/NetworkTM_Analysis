@@ -1,0 +1,259 @@
+{
+  "data": {
+    "T": 10772,
+    "flows": 529,
+    "nodes": 23,
+    "start": "2005-01-01 00:30:00",
+    "end": "2005-04-29 16:45:00"
+  },
+  "spectral": {
+    "raw": {
+      "k90": 1,
+      "k95": 1,
+      "top1_energy": 0.9999418500729135
+    },
+    "log": {
+      "k90": 173,
+      "k95": 262,
+      "top1_energy": 0.3112460803985706
+    }
+  },
+  "completion_nmae": [
+    {
+      "scheme": "random",
+      "missing": 0.3,
+      "n_masks": 10,
+      "soft_impute_lambda_frac": 0.0003,
+      "soft_impute": {
+        "mean": 0.2805700847167081,
+        "sd": 0.005597440839039458
+      },
+      "time_interp": {
+        "mean": 0.17637048688953882,
+        "sd": 0.006606997564484981
+      },
+      "tod_profile": {
+        "mean": 0.5284987107949553,
+        "sd": 0.004364845008404119
+      },
+      "flow_mean": {
+        "mean": 0.5737254191894919,
+        "sd": 0.004312589570958301
+      }
+    },
+    {
+      "scheme": "random",
+      "missing": 0.5,
+      "n_masks": 10,
+      "soft_impute_lambda_frac": 0.0003,
+      "soft_impute": {
+        "mean": 0.3130209858443127,
+        "sd": 0.004425616590700732
+      },
+      "time_interp": {
+        "mean": 0.18969566449173872,
+        "sd": 0.005316617148620159
+      },
+      "tod_profile": {
+        "mean": 0.5316808766212512,
+        "sd": 0.0034600160927583325
+      },
+      "flow_mean": {
+        "mean": 0.5741074565741155,
+        "sd": 0.002251420381179129
+      }
+    },
+    {
+      "scheme": "random",
+      "missing": 0.7,
+      "n_masks": 10,
+      "soft_impute_lambda_frac": 0.0003,
+      "soft_impute": {
+        "mean": 0.3808441573527494,
+        "sd": 0.003053137030728551
+      },
+      "time_interp": {
+        "mean": 0.2189414564916467,
+        "sd": 0.0026555252506859483
+      },
+      "tod_profile": {
+        "mean": 0.5395667677908662,
+        "sd": 0.003007552256900174
+      },
+      "flow_mean": {
+        "mean": 0.5742708681858607,
+        "sd": 0.0023327190597313753
+      }
+    },
+    {
+      "scheme": "random",
+      "missing": 0.9,
+      "n_masks": 10,
+      "soft_impute_lambda_frac": 0.003,
+      "soft_impute": {
+        "mean": 0.9019978858401192,
+        "sd": 0.004449835721388511
+      },
+      "time_interp": {
+        "mean": 0.3043291511944549,
+        "sd": 0.0037358347320283415
+      },
+      "tod_profile": {
+        "mean": 0.5840089214899186,
+        "sd": 0.004214994564536134
+      },
+      "flow_mean": {
+        "mean": 0.5758851783718097,
+        "sd": 0.003466527894119147
+      }
+    },
+    {
+      "scheme": "block",
+      "missing": 0.3,
+      "n_masks": 10,
+      "soft_impute_lambda_frac": 0.0003,
+      "soft_impute": {
+        "mean": 0.36227111827805436,
+        "sd": 0.008695563289585186
+      },
+      "time_interp": {
+        "mean": 0.38608362004700214,
+        "sd": 0.027632161945462197
+      },
+      "tod_profile": {
+        "mean": 0.5277489303778682,
+        "sd": 0.01891661715269245
+      },
+      "flow_mean": {
+        "mean": 0.5789834189928466,
+        "sd": 0.012461975227754328
+      }
+    },
+    {
+      "scheme": "block",
+      "missing": 0.5,
+      "n_masks": 10,
+      "soft_impute_lambda_frac": 0.0003,
+      "soft_impute": {
+        "mean": 0.41763845395250776,
+        "sd": 0.00954828428924248
+      },
+      "time_interp": {
+        "mean": 0.38901824519451084,
+        "sd": 0.010525472213078894
+      },
+      "tod_profile": {
+        "mean": 0.5298338587047912,
+        "sd": 0.006537260524719718
+      },
+      "flow_mean": {
+        "mean": 0.581711524670891,
+        "sd": 0.008066580201354152
+      }
+    },
+    {
+      "scheme": "block",
+      "missing": 0.7,
+      "n_masks": 10,
+      "soft_impute_lambda_frac": 0.001,
+      "soft_impute": {
+        "mean": 0.5316744421926195,
+        "sd": 0.011662571411137274
+      },
+      "time_interp": {
+        "mean": 0.4164853309835438,
+        "sd": 0.013406094700691056
+      },
+      "tod_profile": {
+        "mean": 0.5420897474187071,
+        "sd": 0.007567235446257625
+      },
+      "flow_mean": {
+        "mean": 0.5871512091067976,
+        "sd": 0.011658828533626923
+      }
+    },
+    {
+      "scheme": "block",
+      "missing": 0.9,
+      "n_masks": 10,
+      "soft_impute_lambda_frac": 0.001,
+      "soft_impute": {
+        "mean": 0.9816217885857024,
+        "sd": 0.0012518680498632584
+      },
+      "time_interp": {
+        "mean": 0.4682555890192819,
+        "sd": 0.01694999902852949
+      },
+      "tod_profile": {
+        "mean": 0.6225473515605432,
+        "sd": 0.016531930512387858
+      },
+      "flow_mean": {
+        "mean": 0.6161969316016577,
+        "sd": 0.017722616860159114
+      }
+    }
+  ],
+  "transfer_entropy": {
+    "series": "node outgoing traffic, resampled hourly on the clock, log, hour-of-week median (from timestamps) removed, 4 quantile bins, history 1, only consecutive observed hours",
+    "surrogates": "per pair, 200 circular shifts of the source by >= 7 days",
+    "test": "one-sided z-test against per-pair surrogates, Benjamini-Hochberg FDR q=0.05",
+    "n_pairs": 506,
+    "n_significant_fdr": 9
+  },
+  "anomaly_candidates_z_gt_6": 916,
+  "top_anomaly_candidates": [
+    {
+      "time": "2005-03-11 20:00:00",
+      "od": "22->22",
+      "z": 103.78339803705184
+    },
+    {
+      "time": "2005-01-24 02:45:00",
+      "od": "7->7",
+      "z": 103.52572200418201
+    },
+    {
+      "time": "2005-01-30 05:45:00",
+      "od": "14->19",
+      "z": 91.55249873089116
+    },
+    {
+      "time": "2005-02-24 16:00:00",
+      "od": "15->19",
+      "z": 85.2488010027896
+    },
+    {
+      "time": "2005-01-20 22:00:00",
+      "od": "5->5",
+      "z": 70.04608160647062
+    },
+    {
+      "time": "2005-02-20 18:15:00",
+      "od": "17->17",
+      "z": 68.94261340382268
+    },
+    {
+      "time": "2005-01-30 05:45:00",
+      "od": "19->14",
+      "z": 60.135884266960396
+    },
+    {
+      "time": "2005-01-30 05:45:00",
+      "od": "15->19",
+      "z": 58.130025946570896
+    },
+    {
+      "time": "2005-03-04 15:30:00",
+      "od": "17->17",
+      "z": 57.54483520010582
+    },
+    {
+      "time": "2005-03-20 06:15:00",
+      "od": "19->14",
+      "z": 56.16382601880865
+    }
+  ]
+}

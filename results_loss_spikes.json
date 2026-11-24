@@ -1,0 +1,86 @@
+{
+ "neurons": 40,
+ "bins": 1800000,
+ "packet_ms": 10,
+ "surrogates": 50,
+ "full_n_sig": 18,
+ "conditions": [
+  {
+   "loss_rate": 0.01,
+   "mean_burst_packets": 1,
+   "packets_lost": 0.010072222222222222,
+   "spikes_kept": 0.9898166164727072,
+   "n_sig": 20,
+   "kept_of_full": 0.944,
+   "new_not_in_full": 3,
+   "jaccard": 0.81,
+   "spearman_TE": 0.979
+  },
+  {
+   "loss_rate": 0.05,
+   "mean_burst_packets": 1,
+   "packets_lost": 0.05025,
+   "spikes_kept": 0.9497853846757636,
+   "n_sig": 16,
+   "kept_of_full": 0.611,
+   "new_not_in_full": 5,
+   "jaccard": 0.478,
+   "spearman_TE": 0.889
+  },
+  {
+   "loss_rate": 0.1,
+   "mean_burst_packets": 1,
+   "packets_lost": 0.10057222222222222,
+   "spikes_kept": 0.8992857172365644,
+   "n_sig": 10,
+   "kept_of_full": 0.278,
+   "new_not_in_full": 5,
+   "jaccard": 0.217,
+   "spearman_TE": 0.767
+  },
+  {
+   "loss_rate": 0.2,
+   "mean_burst_packets": 1,
+   "packets_lost": 0.20007777777777777,
+   "spikes_kept": 0.8003932892948472,
+   "n_sig": 57,
+   "kept_of_full": 0.389,
+   "new_not_in_full": 50,
+   "jaccard": 0.103,
+   "spearman_TE": 0.653
+  },
+  {
+   "loss_rate": 0.05,
+   "mean_burst_packets": 10,
+   "packets_lost": 0.0473,
+   "spikes_kept": 0.9533795200383375,
+   "n_sig": 32,
+   "kept_of_full": 0.833,
+   "new_not_in_full": 17,
+   "jaccard": 0.429,
+   "spearman_TE": 0.901
+  },
+  {
+   "loss_rate": 0.1,
+   "mean_burst_packets": 10,
+   "packets_lost": 0.09774444444444444,
+   "spikes_kept": 0.9027889664175559,
+   "n_sig": 71,
+   "kept_of_full": 0.833,
+   "new_not_in_full": 56,
+   "jaccard": 0.203,
+   "spearman_TE": 0.808
+  },
+  {
+   "loss_rate": 0.2,
+   "mean_burst_packets": 10,
+   "packets_lost": 0.20075555555555555,
+   "spikes_kept": 0.7996661998421886,
+   "n_sig": 217,
+   "kept_of_full": 0.667,
+   "new_not_in_full": 205,
+   "jaccard": 0.054,
+   "spearman_TE": 0.668
+  }
+ ]
+}

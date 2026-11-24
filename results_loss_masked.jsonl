@@ -1,0 +1,20 @@
+{"kind": "full", "n_sig": 18, "neurons": 40, "minutes": 30.0, "surrogates": 50}
+{"kind": "length", "minutes": 7.5, "n_sig": 5, "kept_of_full": 0.0, "new_not_in_full": 5, "jaccard": 0.0, "spearman_TE": 0.429}
+{"kind": "length", "minutes": 15, "n_sig": 20, "kept_of_full": 0.111, "new_not_in_full": 18, "jaccard": 0.056, "spearman_TE": 0.561}
+{"kind": "length", "minutes": 22.5, "n_sig": 29, "kept_of_full": 0.5, "new_not_in_full": 20, "jaccard": 0.237, "spearman_TE": 0.731}
+{"kind": "mask-aware", "loss_rate": 0.05, "mean_burst_packets": 10, "seed": 11, "packets_lost": 0.0495, "n_sig": 20, "kept_of_full": 0.889, "new_not_in_full": 4, "jaccard": 0.727, "spearman_TE": 0.917, "sec": 206}
+{"kind": "zero-fill", "loss_rate": 0.05, "mean_burst_packets": 1, "seed": 11, "packets_lost": 0.0503, "n_sig": 13, "kept_of_full": 0.5, "new_not_in_full": 4, "jaccard": 0.409, "spearman_TE": 0.874, "sec": 76}
+{"kind": "zero-fill", "loss_rate": 0.05, "mean_burst_packets": 1, "seed": 12, "packets_lost": 0.05, "n_sig": 17, "kept_of_full": 0.611, "new_not_in_full": 6, "jaccard": 0.458, "spearman_TE": 0.884, "sec": 78}
+{"kind": "zero-fill", "loss_rate": 0.1, "mean_burst_packets": 1, "seed": 11, "packets_lost": 0.0988, "n_sig": 27, "kept_of_full": 0.5, "new_not_in_full": 18, "jaccard": 0.25, "spearman_TE": 0.768, "sec": 70}
+{"kind": "mask-aware", "loss_rate": 0.05, "mean_burst_packets": 10, "seed": 12, "packets_lost": 0.0564, "n_sig": 21, "kept_of_full": 0.611, "new_not_in_full": 10, "jaccard": 0.393, "spearman_TE": 0.921, "sec": 214}
+{"kind": "zero-fill", "loss_rate": 0.1, "mean_burst_packets": 1, "seed": 12, "packets_lost": 0.0993, "n_sig": 37, "kept_of_full": 0.833, "new_not_in_full": 22, "jaccard": 0.375, "spearman_TE": 0.786, "sec": 70}
+{"kind": "zero-fill", "loss_rate": 0.05, "mean_burst_packets": 10, "seed": 11, "packets_lost": 0.0495, "n_sig": 28, "kept_of_full": 0.778, "new_not_in_full": 14, "jaccard": 0.438, "spearman_TE": 0.894, "sec": 76}
+{"kind": "mask-aware", "loss_rate": 0.1, "mean_burst_packets": 10, "seed": 11, "packets_lost": 0.0991, "n_sig": 34, "kept_of_full": 0.611, "new_not_in_full": 23, "jaccard": 0.268, "spearman_TE": 0.85, "sec": 189}
+{"kind": "zero-fill", "loss_rate": 0.05, "mean_burst_packets": 10, "seed": 12, "packets_lost": 0.0564, "n_sig": 38, "kept_of_full": 0.667, "new_not_in_full": 26, "jaccard": 0.273, "spearman_TE": 0.891, "sec": 71}
+{"kind": "zero-fill", "loss_rate": 0.1, "mean_burst_packets": 10, "seed": 11, "packets_lost": 0.0991, "n_sig": 72, "kept_of_full": 0.556, "new_not_in_full": 62, "jaccard": 0.125, "spearman_TE": 0.784, "sec": 69}
+{"kind": "zero-fill", "loss_rate": 0.1, "mean_burst_packets": 10, "seed": 12, "packets_lost": 0.1031, "n_sig": 63, "kept_of_full": 0.611, "new_not_in_full": 52, "jaccard": 0.157, "spearman_TE": 0.793, "sec": 69}
+{"kind": "mask-aware", "loss_rate": 0.1, "mean_burst_packets": 10, "seed": 12, "packets_lost": 0.1031, "n_sig": 20, "kept_of_full": 0.556, "new_not_in_full": 10, "jaccard": 0.357, "spearman_TE": 0.862, "sec": 189}
+{"kind": "mask-aware", "loss_rate": 0.05, "mean_burst_packets": 1, "seed": 11, "packets_lost": 0.0503, "n_sig": 19, "kept_of_full": 0.5, "new_not_in_full": 10, "jaccard": 0.321, "spearman_TE": 0.874, "sec": 197}
+{"kind": "mask-aware", "loss_rate": 0.05, "mean_burst_packets": 1, "seed": 12, "packets_lost": 0.05, "n_sig": 19, "kept_of_full": 0.611, "new_not_in_full": 8, "jaccard": 0.423, "spearman_TE": 0.881, "sec": 220}
+{"kind": "mask-aware", "loss_rate": 0.1, "mean_burst_packets": 1, "seed": 11, "packets_lost": 0.0988, "n_sig": 26, "kept_of_full": 0.5, "new_not_in_full": 17, "jaccard": 0.257, "spearman_TE": 0.763, "sec": 189}
+{"kind": "mask-aware", "loss_rate": 0.1, "mean_burst_packets": 1, "seed": 12, "packets_lost": 0.0993, "n_sig": 27, "kept_of_full": 0.667, "new_not_in_full": 15, "jaccard": 0.364, "spearman_TE": 0.789, "sec": 193}

@@ -1,0 +1,186 @@
+{
+  "data": {
+    "file": "spike.mat",
+    "neurons": 386,
+    "duration_bins": 9000018,
+    "spikes": 2660857
+  },
+  "spectral_firing_counts": {
+    "raw": {
+      "k90": 87,
+      "k95": 166,
+      "top1_energy": 0.4136131216854428
+    },
+    "log": {
+      "k90": 225,
+      "k95": 276,
+      "top1_energy": 0.22177425444032692
+    }
+  },
+  "completion": {
+    "matrix": "log1p firing counts, 10000-bin samples, first 0 samples, 386 neurons with spikes",
+    "nmae": [
+      {
+        "scheme": "random",
+        "missing": 0.3,
+        "n_masks": 10,
+        "soft_impute_lambda_frac": 0.01,
+        "soft_impute": {
+          "mean": 0.2939480284170084,
+          "sd": 0.0008445324580514823
+        },
+        "time_interp": {
+          "mean": 0.3181587516420038,
+          "sd": 0.0013784356897677008
+        },
+        "flow_mean": {
+          "mean": 0.3330059691708066,
+          "sd": 0.001316700685074844
+        }
+      },
+      {
+        "scheme": "random",
+        "missing": 0.5,
+        "n_masks": 10,
+        "soft_impute_lambda_frac": 0.003,
+        "soft_impute": {
+          "mean": 0.3055904159590916,
+          "sd": 0.0007554007440768968
+        },
+        "time_interp": {
+          "mean": 0.32080681843104925,
+          "sd": 0.0008157368029187646
+        },
+        "flow_mean": {
+          "mean": 0.33261251521411295,
+          "sd": 0.000683246593704427
+        }
+      },
+      {
+        "scheme": "random",
+        "missing": 0.7,
+        "n_masks": 10,
+        "soft_impute_lambda_frac": 0.003,
+        "soft_impute": {
+          "mean": 0.3227664461495243,
+          "sd": 0.0013208062241803285
+        },
+        "time_interp": {
+          "mean": 0.32463584241411425,
+          "sd": 0.0005895362551272511
+        },
+        "flow_mean": {
+          "mean": 0.333204318953205,
+          "sd": 0.0005897024474236029
+        }
+      },
+      {
+        "scheme": "random",
+        "missing": 0.9,
+        "n_masks": 10,
+        "soft_impute_lambda_frac": 0.003,
+        "soft_impute": {
+          "mean": 0.6343512609985776,
+          "sd": 0.006654903740602519
+        },
+        "time_interp": {
+          "mean": 0.3317228027279722,
+          "sd": 0.0008648446592691638
+        },
+        "flow_mean": {
+          "mean": 0.3342911852704903,
+          "sd": 0.00046067343805054553
+        }
+      },
+      {
+        "scheme": "block",
+        "missing": 0.3,
+        "n_masks": 10,
+        "soft_impute_lambda_frac": 0.01,
+        "soft_impute": {
+          "mean": 0.30905063832146984,
+          "sd": 0.00583923211342504
+        },
+        "time_interp": {
+          "mean": 0.33801201076664456,
+          "sd": 0.006404515142062436
+        },
+        "flow_mean": {
+          "mean": 0.33235783617559755,
+          "sd": 0.007989197795762015
+        }
+      },
+      {
+        "scheme": "block",
+        "missing": 0.5,
+        "n_masks": 10,
+        "soft_impute_lambda_frac": 0.003,
+        "soft_impute": {
+          "mean": 0.3254306070920073,
+          "sd": 0.003578851607807433
+        },
+        "time_interp": {
+          "mean": 0.3374602209385101,
+          "sd": 0.004476355253775544
+        },
+        "flow_mean": {
+          "mean": 0.331644361625135,
+          "sd": 0.006048987377052726
+        }
+      },
+      {
+        "scheme": "block",
+        "missing": 0.7,
+        "n_masks": 10,
+        "soft_impute_lambda_frac": 0.003,
+        "soft_impute": {
+          "mean": 0.38351527123546564,
+          "sd": 0.009667203760004803
+        },
+        "time_interp": {
+          "mean": 0.3416907975275836,
+          "sd": 0.0020549474423189095
+        },
+        "flow_mean": {
+          "mean": 0.3342289696198765,
+          "sd": 0.0020381414269553277
+        }
+      },
+      {
+        "scheme": "block",
+        "missing": 0.9,
+        "n_masks": 10,
+        "soft_impute_lambda_frac": 0.001,
+        "soft_impute": {
+          "mean": 0.8319110511136036,
+          "sd": 0.0059827427039194385
+        },
+        "time_interp": {
+          "mean": 0.36277595634318444,
+          "sd": 0.004951923942792084
+        },
+        "flow_mean": {
+          "mean": 0.3529146062446745,
+          "sd": 0.009131962137310741
+        }
+      }
+    ]
+  },
+  "transfer_entropy": {
+    "neurons": "top 40 by spike count",
+    "window_bins": 1800000,
+    "method": "binary TE, 1-bin resolution, history 1, delays 1..30, peak over delays",
+    "surrogates": "per pair, 100 circular shifts of the source by >= 1000 bins, peak over delays",
+    "test": "one-sided z-test against per-pair surrogates, Benjamini-Hochberg FDR q=0.05",
+    "n_pairs": 1560,
+    "n_significant_fdr": 18,
+    "peak_delay_of_significant_pairs": {
+      "median": 18.0,
+      "iqr": [
+        11.25,
+        22.0
+      ]
+    },
+    "by_source_type": null
+  }
+}

@@ -1,0 +1,282 @@
+{
+ "setup": {
+  "tau_ms": 10.0,
+  "one_way_delay_ms": 20.0,
+  "loss_rate": 0.1,
+  "mean_burst_packets": 10,
+  "fec_group": 4,
+  "packets": 20000
+ },
+ "rows": [
+  {
+   "loss": "independent",
+   "deadline_ms": 25,
+   "scheme": "mask",
+   "residual_loss": 0.0991,
+   "bandwidth_ratio": 1.0,
+   "valid_fraction_f": 0.8198,
+   "time_factor_1_over_f": 1.22
+  },
+  {
+   "loss": "independent",
+   "deadline_ms": 25,
+   "scheme": "fec",
+   "residual_loss": 0.0987,
+   "bandwidth_ratio": 1.25,
+   "valid_fraction_f": 0.8205,
+   "time_factor_1_over_f": 1.219
+  },
+  {
+   "loss": "independent",
+   "deadline_ms": 25,
+   "scheme": "arq",
+   "residual_loss": 0.0991,
+   "bandwidth_ratio": 1.0,
+   "valid_fraction_f": 0.8198,
+   "time_factor_1_over_f": 1.22
+  },
+  {
+   "loss": "independent",
+   "deadline_ms": 50,
+   "scheme": "mask",
+   "residual_loss": 0.0991,
+   "bandwidth_ratio": 1.0,
+   "valid_fraction_f": 0.8198,
+   "time_factor_1_over_f": 1.22
+  },
+  {
+   "loss": "independent",
+   "deadline_ms": 50,
+   "scheme": "fec",
+   "residual_loss": 0.0501,
+   "bandwidth_ratio": 1.25,
+   "valid_fraction_f": 0.9103,
+   "time_factor_1_over_f": 1.099
+  },
+  {
+   "loss": "independent",
+   "deadline_ms": 50,
+   "scheme": "arq",
+   "residual_loss": 0.0991,
+   "bandwidth_ratio": 1.089,
+   "valid_fraction_f": 0.8198,
+   "time_factor_1_over_f": 1.22
+  },
+  {
+   "loss": "independent",
+   "deadline_ms": 100,
+   "scheme": "mask",
+   "residual_loss": 0.0991,
+   "bandwidth_ratio": 1.0,
+   "valid_fraction_f": 0.8198,
+   "time_factor_1_over_f": 1.22
+  },
+  {
+   "loss": "independent",
+   "deadline_ms": 100,
+   "scheme": "fec",
+   "residual_loss": 0.0341,
+   "bandwidth_ratio": 1.25,
+   "valid_fraction_f": 0.9403,
+   "time_factor_1_over_f": 1.063
+  },
+  {
+   "loss": "independent",
+   "deadline_ms": 100,
+   "scheme": "arq",
+   "residual_loss": 0.0182,
+   "bandwidth_ratio": 1.106,
+   "valid_fraction_f": 0.9653,
+   "time_factor_1_over_f": 1.036
+  },
+  {
+   "loss": "independent",
+   "deadline_ms": 200,
+   "scheme": "mask",
+   "residual_loss": 0.0991,
+   "bandwidth_ratio": 1.0,
+   "valid_fraction_f": 0.8198,
+   "time_factor_1_over_f": 1.22
+  },
+  {
+   "loss": "independent",
+   "deadline_ms": 200,
+   "scheme": "fec",
+   "residual_loss": 0.0341,
+   "bandwidth_ratio": 1.25,
+   "valid_fraction_f": 0.9403,
+   "time_factor_1_over_f": 1.063
+  },
+  {
+   "loss": "independent",
+   "deadline_ms": 200,
+   "scheme": "arq",
+   "residual_loss": 0.0004,
+   "bandwidth_ratio": 1.11,
+   "valid_fraction_f": 0.9992,
+   "time_factor_1_over_f": 1.001
+  },
+  {
+   "loss": "independent",
+   "deadline_ms": 1000,
+   "scheme": "mask",
+   "residual_loss": 0.0991,
+   "bandwidth_ratio": 1.0,
+   "valid_fraction_f": 0.8198,
+   "time_factor_1_over_f": 1.22
+  },
+  {
+   "loss": "independent",
+   "deadline_ms": 1000,
+   "scheme": "fec",
+   "residual_loss": 0.0341,
+   "bandwidth_ratio": 1.25,
+   "valid_fraction_f": 0.9403,
+   "time_factor_1_over_f": 1.063
+  },
+  {
+   "loss": "independent",
+   "deadline_ms": 1000,
+   "scheme": "arq",
+   "residual_loss": 0.0,
+   "bandwidth_ratio": 1.111,
+   "valid_fraction_f": 0.9999,
+   "time_factor_1_over_f": 1.0
+  },
+  {
+   "loss": "bursts",
+   "deadline_ms": 25,
+   "scheme": "mask",
+   "residual_loss": 0.0867,
+   "bandwidth_ratio": 1.0,
+   "valid_fraction_f": 0.8999,
+   "time_factor_1_over_f": 1.111
+  },
+  {
+   "loss": "bursts",
+   "deadline_ms": 25,
+   "scheme": "fec",
+   "residual_loss": 0.0873,
+   "bandwidth_ratio": 1.25,
+   "valid_fraction_f": 0.8963,
+   "time_factor_1_over_f": 1.116
+  },
+  {
+   "loss": "bursts",
+   "deadline_ms": 25,
+   "scheme": "arq",
+   "residual_loss": 0.0867,
+   "bandwidth_ratio": 1.0,
+   "valid_fraction_f": 0.8999,
+   "time_factor_1_over_f": 1.111
+  },
+  {
+   "loss": "bursts",
+   "deadline_ms": 50,
+   "scheme": "mask",
+   "residual_loss": 0.0867,
+   "bandwidth_ratio": 1.0,
+   "valid_fraction_f": 0.8999,
+   "time_factor_1_over_f": 1.111
+  },
+  {
+   "loss": "bursts",
+   "deadline_ms": 50,
+   "scheme": "fec",
+   "residual_loss": 0.0867,
+   "bandwidth_ratio": 1.25,
+   "valid_fraction_f": 0.8974,
+   "time_factor_1_over_f": 1.114
+  },
+  {
+   "loss": "bursts",
+   "deadline_ms": 50,
+   "scheme": "arq",
+   "residual_loss": 0.0867,
+   "bandwidth_ratio": 1.023,
+   "valid_fraction_f": 0.8999,
+   "time_factor_1_over_f": 1.111
+  },
+  {
+   "loss": "bursts",
+   "deadline_ms": 100,
+   "scheme": "mask",
+   "residual_loss": 0.0867,
+   "bandwidth_ratio": 1.0,
+   "valid_fraction_f": 0.8999,
+   "time_factor_1_over_f": 1.111
+  },
+  {
+   "loss": "bursts",
+   "deadline_ms": 100,
+   "scheme": "fec",
+   "residual_loss": 0.0846,
+   "bandwidth_ratio": 1.25,
+   "valid_fraction_f": 0.9,
+   "time_factor_1_over_f": 1.111
+  },
+  {
+   "loss": "bursts",
+   "deadline_ms": 100,
+   "scheme": "arq",
+   "residual_loss": 0.0602,
+   "bandwidth_ratio": 1.05,
+   "valid_fraction_f": 0.9283,
+   "time_factor_1_over_f": 1.077
+  },
+  {
+   "loss": "bursts",
+   "deadline_ms": 200,
+   "scheme": "mask",
+   "residual_loss": 0.0867,
+   "bandwidth_ratio": 1.0,
+   "valid_fraction_f": 0.8999,
+   "time_factor_1_over_f": 1.111
+  },
+  {
+   "loss": "bursts",
+   "deadline_ms": 200,
+   "scheme": "fec",
+   "residual_loss": 0.0846,
+   "bandwidth_ratio": 1.25,
+   "valid_fraction_f": 0.9,
+   "time_factor_1_over_f": 1.111
+  },
+  {
+   "loss": "bursts",
+   "deadline_ms": 200,
+   "scheme": "arq",
+   "residual_loss": 0.0218,
+   "bandwidth_ratio": 1.082,
+   "valid_fraction_f": 0.9725,
+   "time_factor_1_over_f": 1.028
+  },
+  {
+   "loss": "bursts",
+   "deadline_ms": 1000,
+   "scheme": "mask",
+   "residual_loss": 0.0867,
+   "bandwidth_ratio": 1.0,
+   "valid_fraction_f": 0.8999,
+   "time_factor_1_over_f": 1.111
+  },
+  {
+   "loss": "bursts",
+   "deadline_ms": 1000,
+   "scheme": "fec",
+   "residual_loss": 0.0846,
+   "bandwidth_ratio": 1.25,
+   "valid_fraction_f": 0.9,
+   "time_factor_1_over_f": 1.111
+  },
+  {
+   "loss": "bursts",
+   "deadline_ms": 1000,
+   "scheme": "arq",
+   "residual_loss": 0.0,
+   "bandwidth_ratio": 1.097,
+   "valid_fraction_f": 0.9999,
+   "time_factor_1_over_f": 1.0
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+[
+ {
+  "file": "spike.mat",
+  "median_rate_hz": 2.39,
+  "spikes_per_channel_per_packet": 0.034,
+  "median_fraction_channel_silent": 0.976,
+  "fraction_all_40_silent": 0.265
+ },
+ {
+  "file": "asdf.mat",
+  "median_rate_hz": 23.95,
+  "spikes_per_channel_per_packet": 0.452,
+  "median_fraction_channel_silent": 0.787,
+  "fraction_all_40_silent": 0.0
+ }
+]

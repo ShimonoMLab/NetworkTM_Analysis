@@ -1,0 +1,122 @@
+[
+ {
+  "model": "propagation: tandem queues, delay",
+  "seed": 0,
+  "SLTE": 0.04832,
+  "identity": 0.04832,
+  "TE": 0.00148,
+  "n_events": 19998,
+  "p_two_sided": 0.002,
+  "sign": "+"
+ },
+ {
+  "model": "propagation: tandem queues, delay",
+  "seed": 1,
+  "SLTE": 0.04817,
+  "identity": 0.04817,
+  "TE": 0.00184,
+  "n_events": 19998,
+  "p_two_sided": 0.002,
+  "sign": "+"
+ },
+ {
+  "model": "propagation: tandem queues, delay",
+  "seed": 2,
+  "SLTE": 0.07868,
+  "identity": 0.07868,
+  "TE": 0.00346,
+  "n_events": 19998,
+  "p_two_sided": 0.002,
+  "sign": "+"
+ },
+ {
+  "model": "competition, response in the same step: throughput",
+  "seed": 0,
+  "SLTE": 0.01727,
+  "identity": 0.01727,
+  "TE": 0.00074,
+  "n_events": 19998,
+  "p_two_sided": 0.002,
+  "sign": "+"
+ },
+ {
+  "model": "competition, response in the same step: throughput",
+  "seed": 1,
+  "SLTE": 0.01227,
+  "identity": 0.01227,
+  "TE": 0.00039,
+  "n_events": 19998,
+  "p_two_sided": 0.002,
+  "sign": "+"
+ },
+ {
+  "model": "competition, response in the same step: throughput",
+  "seed": 2,
+  "SLTE": 0.01402,
+  "identity": 0.01402,
+  "TE": 0.0005,
+  "n_events": 19998,
+  "p_two_sided": 0.002,
+  "sign": "+"
+ },
+ {
+  "model": "competition, response one step later: throughput",
+  "seed": 0,
+  "SLTE": -0.07119,
+  "identity": -0.07119,
+  "TE": 0.00184,
+  "n_events": 19998,
+  "p_two_sided": 0.002,
+  "sign": "-"
+ },
+ {
+  "model": "competition, response one step later: throughput",
+  "seed": 1,
+  "SLTE": -0.07763,
+  "identity": -0.07763,
+  "TE": 0.00219,
+  "n_events": 19998,
+  "p_two_sided": 0.002,
+  "sign": "-"
+ },
+ {
+  "model": "competition, response one step later: throughput",
+  "seed": 2,
+  "SLTE": -0.08576,
+  "identity": -0.08576,
+  "TE": 0.00268,
+  "n_events": 19998,
+  "p_two_sided": 0.002,
+  "sign": "-"
+ },
+ {
+  "model": "independent queues, delay",
+  "seed": 0,
+  "SLTE": -0.01597,
+  "identity": -0.01597,
+  "TE": 0.00011,
+  "n_events": 19998,
+  "p_two_sided": 0.0958,
+  "sign": "-"
+ },
+ {
+  "model": "independent queues, delay",
+  "seed": 1,
+  "SLTE": 0.00411,
+  "identity": 0.00411,
+  "TE": 1e-05,
+  "n_events": 19998,
+  "p_two_sided": 0.6367,
+  "sign": "+"
+ },
+ {
+  "model": "independent queues, delay",
+  "seed": 2,
+  "SLTE": 0.01068,
+  "identity": 0.01068,
+  "TE": 7e-05,
+  "n_events": 19998,
+  "p_two_sided": 0.2814,
+  "sign": "+"
+ }
+]
