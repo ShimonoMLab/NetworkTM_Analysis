@@ -1,6 +1,6 @@
 # Transfer entropy under packet erasures: variance benchmark
 
-This standalone synthetic-data benchmark compares an observed-fraction-only variance approximation with a long-run covariance approximation. No real neuronal recording, external network trace, actual network transmission, or proprietary data is used. The code and results have not been published on GitHub; independent review is recommended before publication. These are research prototypes, not evidence of a novel theorem or a validated communication protocol.
+This standalone synthetic-data benchmark compares an observed-fraction-only variance approximation with a long-run covariance approximation. No real neuronal recording, external network trace, actual network transmission, or proprietary data is used. These are research prototypes, not evidence of a novel theorem or a validated communication protocol.
 
 ## Reproduce
 Python 3.10+ and NumPy 1.24+; the scripts use fixed pseudorandom seeds. Run in this directory:
@@ -31,4 +31,4 @@ The simpler comparison is V_f=L0/[(N-1)f], where L0=gamma_0+2 sum gamma_k. For p
 - Switching coupling: 18 conditions, 600 trajectories per condition, 8,000 time points. Across 15 nonzero-loss conditions, corresponding error is 19.49% vs 7.11%. No universal superiority claimed.
 - Fresh-seed confirmation: 4 conditions, 1,000 trajectories, 16,000 time points. For regime persistence 0.98 and independent loss 30%, empirical variance is 6.4683e-5 bit^2 (marginal 95% bootstrap interval 5.9105e-5 to 7.0531e-5); V_f=8.7175e-5 (34.77% relative error), V_L=6.6070e-5 (2.14%). For correlated loss r=0.8 the errors are 11.85% and 3.02%; at r=0.95 they are 1.56% and 3.61%. No multiple-testing adjustment or formal model-selection claim. The practical implication is conditional: temporal signal and loss structure can matter for estimating TE precision, beyond the observed fraction.
 
-Before publication, review code and derivation independently, verify fresh execution, decide license and citation metadata with the owner, and disclose limitations and AI-assisted coding if appropriate under applicable policy. Never include application materials or restricted original recordings in the public repository.
+Independent validation of the derivation and benchmarks remains necessary.

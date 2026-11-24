@@ -1,0 +1,10 @@
+{
+  "scope": "Two Linux network namespaces connected by virtual Ethernet on one physical host; application-injected loss",
+  "python": "3.13.5",
+  "numpy": "2.2.4",
+  "sender_network_namespace": "net:[4026532185]",
+  "receiver_network_namespace": "net:[4026532251]",
+  "trials": 48,
+  "all_archive_match": true,
+  "max_te_difference_bits": 5.643001257243929e-16
+}

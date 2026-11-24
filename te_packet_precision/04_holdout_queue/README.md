@@ -13,3 +13,6 @@ This selects the four most active channels in the pilot half, 12 directed pairs,
 
 ## Physical link
 The optional `link_probe.py` is an echo probe, not a full TE transmission benchmark. Run the server and client on separate authorized local computers, with the receiver's actual private IP address and permitted port (see stage 03 README). No public server or port exposure is needed. Physical integration and real performance testing remain incomplete.
+
+## Independent baseline comparison (v74)
+Run `python direct_hac_holdout.py`. Three models, fresh seeds, 64/96/192 trajectories per persistence regime, 72 settings. Mean relative errors: fraction 12.64%, factorized 15.45%, direct masked 15.51%. Direct masked HAC uses a complete-pilot-derived score, globally centered after masking. No overall superiority established.

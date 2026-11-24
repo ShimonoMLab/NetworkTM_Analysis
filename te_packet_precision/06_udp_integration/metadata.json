@@ -1,7 +1,7 @@
 [
   {
-    "file": "spikes.npy",
-    "sha256": "5883c8faaf0ba8cc796c2897d4d7bef3bdd17631600973fe7c56f5667f6f22ee",
+    "file": "synthetic_low.npy",
+    "sha256": "661415950f971722a3e7f4bd361e2a2a668c6c9f3160f5870932c7db86355db4",
     "shape": [
       40000,
       128
@@ -9,20 +9,23 @@
     "pilot_samples": 20000,
     "test_samples": 20000,
     "channels": [
-      19,
-      21,
-      35,
-      40,
-      56,
-      62,
-      63,
-      76
+      127,
+      123,
+      29,
+      126,
+      113,
+      51,
+      75,
+      13
     ],
-    "provenance": "User binary spike/event array; recording origin and time step unverified"
+    "provenance": "Synthetic binary events (not neuronal recordings)",
+    "generator_seed": 74001,
+    "base_rate_per_sample": 0.0025,
+    "copy_probability": 0.2
   },
   {
-    "file": "spikes2.npy",
-    "sha256": "d9364a8ffe9302942dbb720c15b5ffed8277fe9505f649edcac0c2a2a391fe55",
+    "file": "synthetic_high.npy",
+    "sha256": "dae667715bd53dc67fce6be785e1d1800bf1350b20e56415570db12127df2dc6",
     "shape": [
       40000,
       128
@@ -30,15 +33,18 @@
     "pilot_samples": 20000,
     "test_samples": 20000,
     "channels": [
-      54,
-      97,
-      126,
-      99,
-      98,
+      43,
       53,
-      101,
-      95
+      125,
+      57,
+      77,
+      111,
+      103,
+      123
     ],
-    "provenance": "User binary spike/event array; recording origin and time step unverified"
+    "provenance": "Synthetic binary events (not neuronal recordings)",
+    "generator_seed": 74002,
+    "base_rate_per_sample": 0.0055,
+    "copy_probability": 0.2
   }
 ]

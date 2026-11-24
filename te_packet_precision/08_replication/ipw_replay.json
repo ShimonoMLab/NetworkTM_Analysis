@@ -1,0 +1,15 @@
+{
+  "python": "3.13.5",
+  "numpy": "2.2.4",
+  "scope": "fresh deterministic synthetic simulation on alternative NumPy environment, same physical host",
+  "results": {
+    "informative_summary.csv": {
+      "rows": 6,
+      "max_abs_difference": 0
+    },
+    "informative_replicates.csv": {
+      "rows": 768,
+      "max_abs_difference": 0
+    }
+  }
+}

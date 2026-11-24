@@ -1,0 +1,16 @@
+{
+  "version": "v76",
+  "python": "3.13.5",
+  "numpy": "2.3.5",
+  "pandas": "2.2.3",
+  "scipy": "1.17.0",
+  "udp_rerun": {
+    "runs": 48,
+    "all_received_or_recovered_values_match": true,
+    "all_deterministic_csv_fields_equal": true,
+    "metadata_equal": true,
+    "summary_equal": true,
+    "excluded_field": "elapsed_s"
+  },
+  "scope": "Local rerun of synthetic socket stage; not an independent external replication or a physical two-host experiment."
+}

@@ -39,5 +39,5 @@ Sender: `python link_probe.py client --host ADDRESS --count 100 --output physica
 
 No one-way latency is estimated, no synchronized clocks assumed, and probe packet rate is modest. The physical-network TE/FEC/NACK integration, queue measurements, equal-byte performance comparison and real-recording validation remain outstanding. Do not report these as completed.
 
-## Files and publication
-`validate.py`, `bandwidth_sensitivity.py`, `link_probe.py`: executable prototypes; `synthetic_variance.csv`, `synthetic_policy.csv`, `lag_sensitivity.csv`, `localhost_probe.csv`: results from the current run. Review the derivation, code, license and data terms before publishing; do not include job application materials or unlicensed raw data. No GitHub write was performed.
+## Files
+`validate.py`, `bandwidth_sensitivity.py`, `link_probe.py`: executable prototypes; `synthetic_variance.csv`, `synthetic_policy.csv`, `lag_sensitivity.csv`, `localhost_probe.csv`: results from the current run. Independent validation and applicable data-use terms remain relevant.
